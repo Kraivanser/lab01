@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def fibo(n):
+    fib = [0, 1] # Инициализация массива чисел Фибоначчи
+
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2]) # Вычисление числа Фибоначчи и добавление его в массив
+    return fib
+
+N = 10 # Количество чисел Фибоначчи
+
+fibonacci = fibo(N)
+
+# Построение графика
+plt.plot(range(1, N+1), fibonacci, 'bo-')
+plt.xlabel('Номер числа Фибоначчи')
+plt.ylabel('Значение числа Фибоначчи')
+plt.title('Числа Фибоначчи')
+plt.grid(True)
+plt.show()
